@@ -1,0 +1,251 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    gap: 15px;
+    font-family: sans-serif;
+    background-color: #585858a1;
+}
+
+.top-box {
+    border: 2px solid black;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #b1b1b1a1;
+}
+
+.bottom-box {
+    border: 2px solid black;
+    padding: 8px 20px;
+    width: 300px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #b1b1b1a1;
+}
+
+.bottom-box p {
+    margin: 0;
+    word-break: break-word;
+    cursor: pointer;
+    user-select: none;
+}
+
+.top-box button {
+    margin: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.my-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    background: #b1b1b1;
+    border: 2px solid black;
+    padding: 25px;
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    max-width: 2000px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -45%) scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+
+.my-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.my-popup h2 {
+    color: black;
+    font-family: sans-serif;
+    margin-top: 0;
+}
+
+.attributes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.attribute-column {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.dota-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+}
+
+.hero-item {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #c9c9c9;
+    border: 1px solid #777;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: filter 0.2s ease;
+}
+
+.hero-item:hover {
+    border-color: #222;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.hero-item:hover img {
+    filter: brightness(1.05);
+}
+
+.top-box-btn {
+    padding: 0;
+    border: 2px solid #444;
+    cursor: pointer;
+    width: 120px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.top-box-btn:hover {
+    border-color: #3e71a3;
+    box-shadow: 0 0 10px rgba(61, 96, 203, 0.5);
+}
+
+#open-btn {
+    padding: 0;
+    aspect-ratio: 16 / 9;
+}
+
+#open-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#bind-btn,
+#phrases-btn {
+    padding: 0;
+    height: 50px;
+}
+
+.phrases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.phrase-item {
+    background: #c9c9c9;
+    border: 1px solid #777;
+    color: black;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#close-btn,
+#phrases-close-btn {
+    background: #c9c9c9;
+    border: 2px solid #444;
+    color: black;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+#close-btn:hover,
+#phrases-close-btn:hover {
+    background: #b0b0b0;
+    border-color: #222;
+}
+
+.phrase-item:hover {
+    background: #b0b0b0;
+    border-color: #222;
+    color: black;
+    padding-left: 25px;
+}
+
+@media (max-width: 1200px) {
+    .attributes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .attributes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dota-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .phrases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .my-popup {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #b1b1b1;
+    border: 2px solid black;
+    color: black;
+    font-family: sans-serif;
+    padding: 10px 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#toast.show {
+    opacity: 1;
+    visibility: visible;
+}

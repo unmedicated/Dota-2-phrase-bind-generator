@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка героя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="top-box">
+        <button type="button" id="open-btn" class="top-box-btn">Выбрать героя</button>
+        <button type="button" id="bind-btn" class="top-box-btn">Назначить клавишу</button>
+        <button type="button" id="phrases-btn" class="top-box-btn">Выбор Фразы</button>
+    </div>
+
+    <div class="bottom-box">
+        <p id="bottom-text">Здесь находится ваш текст.</p>
+    </div>
+
+    <div id="phrases-popup" class="my-popup">
+        <div class="popup-content">
+            <h2>Выберите фразу героя</h2>
+            <div class="phrases-grid">
+            </div>
+            <button id="phrases-close-btn" class="close-btn" style="margin-top: 20px;">Закрыть</button>
+        </div>
+    </div>
+
+    <div id="hero-popup" class="my-popup">
+        <h2>ВЫБЕРИТЕ ГЕРОЯ</h2>
+
+        <div class="attributes-container">
+
+            <div class="attribute-column" data-attr="strength">
+                <div class="attribute-title strength">СИЛА</div>
+                <div class="dota-grid"></div>
+            </div>
+
+            <div class="attribute-column" data-attr="agility">
+                <div class="attribute-title agility">ЛОВКОСТЬ</div>
+                <div class="dota-grid"></div>
+            </div>
+
+            <div class="attribute-column" data-attr="intelligence">
+                <div class="attribute-title intelligence">ИНТЕЛЛЕКТ</div>
+                <div class="dota-grid"></div>
+            </div>
+
+            <div class="attribute-column" data-attr="universal">
+                <div class="attribute-title universal">УНИВЕРСАЛЬНЫЕ</div>
+                <div class="dota-grid"></div>
+            </div>
+
+        </div>
+
+        <button type="button" id="close-btn">Закрыть</button>
+    </div>
+
+
+
+
+    <div id="toast">Скопировано</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
