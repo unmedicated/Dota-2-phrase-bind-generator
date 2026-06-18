@@ -28,23 +28,22 @@ const KEY_MAP = {
   ArrowUp: 'uparrow', ArrowDown: 'downarrow',
   ArrowLeft: 'leftarrow', ArrowRight: 'rightarrow',
   Insert: 'ins', Delete: 'del',
-  PageUp: 'pgup', PageDown: 'pgdn'
+  PageUp: 'pgup', PageDown: 'pgdn',
+  Comma: ',', Period: '.',
+  Slash: '/'
 };
 
 function updateBottomText() {
   const heroName = currentHero || null;
+  const parts = ['bind'];
   if (heroId && phraseNum) {
-    const parts = [];
-    if (heroName) parts.push(heroName);
     if (boundKey) parts.push(boundKey);
-    parts.push('chatwheel_say ' + heroId + '00' + phraseNum);
+    parts.push('"chatwheel_say ' + heroId + '00' + phraseNum + '"');
     bottomText.textContent = parts.join(' ');
   } else {
-    const parts = [];
-    if (heroName) parts.push(heroName);
     if (phraseText) parts.push('— ' + phraseText);
     if (boundKey) parts.push(boundKey);
-    bottomText.textContent = parts.length ? parts.join(' ') : 'Здесь находится ваш текст.';
+    bottomText.textContent = parts.length > 1 ? parts.join(' ') : 'Здесь находится ваш текст.';
   }
 }
 
