@@ -30,7 +30,14 @@ const KEY_MAP = {
   Insert: 'ins', Delete: 'del',
   PageUp: 'pgup', PageDown: 'pgdn',
   Comma: ',', Period: '.',
-  Slash: '/'
+  Slash: '/', 
+  Numpad1: 'kp_end', Numpad2: 'kp_downbarrow', Numpad3: 'kp_pgdn', Numpad4: 'kp_leftarrow', Numpad5: 'kp_5',
+  Numpad6: 'kp_rightarrow', Numpad7: 'kp_home', Numpad8: 'kp_uparrow', Numpad9: 'kp_pgup', Numpad0: 'kp_ins',
+  NumpadDecimal: 'kp_del', NumpadAdd: 'kp_plus',
+  NumpadEnter: 'kp_enter', NumpadSubtract: 'kp_minus',
+  NumpadDivide: 'kp_slash', NumpadMultiply: 'kp_multiply',
+  Quote: '\'', BracketLeft: '[', BracketRight: ']',
+  Minus: '-', Equal: '=', Backslash: '\\'
 };
 
 function updateBottomText() {
