@@ -7,25 +7,26 @@ body {
     margin: 0;
     gap: 15px;
     font-family: sans-serif;
-    background-color: #585858a1;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 .top-box {
-    border: 2px solid black;
+    border: 2px solid #444;
     padding: 20px;
     width: 300px;
     text-align: center;
     box-sizing: border-box;
-    background-color: #b1b1b1a1;
+    background-color: #2d2d2d;
 }
 
 .bottom-box {
-    border: 2px solid black;
+    border: 2px solid #444;
     padding: 8px 20px;
     width: 300px;
     text-align: center;
     box-sizing: border-box;
-    background-color: #b1b1b1a1;
+    background-color: #2d2d2d;
 }
 
 .bottom-box p {
@@ -46,10 +47,10 @@ body {
     top: 50%;
     left: 50%;
     z-index: 999;
-    background: #b1b1b1;
-    border: 2px solid black;
+    background: #252525;
+    border: 2px solid #555;
     padding: 25px;
-    color: black;
+    color: #e0e0e0;
     font-family: sans-serif;
     text-align: center;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
@@ -68,7 +69,7 @@ body {
 }
 
 .my-popup h2 {
-    color: black;
+    color: #e0e0e0;
     font-family: sans-serif;
     margin-top: 0;
 }
@@ -81,7 +82,7 @@ body {
 }
 
 .attribute-column {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     padding: 10px;
     border-radius: 4px;
 }
@@ -95,8 +96,8 @@ body {
 .hero-item {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #c9c9c9;
-    border: 1px solid #777;
+    background: #3a3a3a;
+    border: 1px solid #555;
     cursor: pointer;
     transition: all 0.2s ease;
     overflow: hidden;
@@ -113,9 +114,9 @@ body {
 }
 
 .hero-item:hover {
-    border-color: #222;
+    border-color: #888;
     transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgba(150, 150, 150, 0.4);
     z-index: 10;
 }
 
@@ -125,16 +126,18 @@ body {
 
 .top-box-btn {
     padding: 0;
-    border: 2px solid #444;
+    border: 2px solid #555;
     cursor: pointer;
     width: 120px;
     overflow: hidden;
     transition: all 0.2s ease;
+    background: #3a3a3a;
+    color: #e0e0e0;
 }
 
 .top-box-btn:hover {
-    border-color: #3e71a3;
-    box-shadow: 0 0 10px rgba(61, 96, 203, 0.5);
+    border-color: #666;
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.5);
 }
 
 #open-btn {
@@ -157,18 +160,16 @@ body {
 
 .phrases-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 20px;
-    max-height: 400px;
-    overflow-y: auto;
     padding-right: 5px;
 }
 
 .phrase-item {
-    background: #c9c9c9;
-    border: 1px solid #777;
-    color: black;
+    background: #3a3a3a;
+    border: 1px solid #555;
+    color: #e0e0e0;
     padding: 12px 20px;
     cursor: pointer;
     font-size: 15px;
@@ -179,11 +180,18 @@ body {
     box-sizing: border-box;
 }
 
+.phrase-group-1 { background: #3d2b1f; border-color: #8c5a2e; }
+.phrase-group-2 { background: #2e2e32; border-color: #a8a8b0; }
+.phrase-group-3 { background: #3a3318; border-color: #c9a825; }
+.phrase-group-4 { background: #2a3040; border-color: #b0bec5; }
+.phrase-group-5 { background: #2e1a3e; border-color: #9c27b0; }
+.phrase-group-6 { background: #3e1a1a; border-color: #c62828; }
+
 #close-btn,
 #phrases-close-btn {
-    background: #c9c9c9;
-    border: 2px solid #444;
-    color: black;
+    background: #3a3a3a;
+    border: 2px solid #555;
+    color: #e0e0e0;
     padding: 8px 20px;
     cursor: pointer;
     font-size: 14px;
@@ -192,14 +200,14 @@ body {
 
 #close-btn:hover,
 #phrases-close-btn:hover {
-    background: #b0b0b0;
-    border-color: #222;
+    background: #4a4a4a;
+    border-color: #888;
 }
 
 .phrase-item:hover {
-    background: #b0b0b0;
-    border-color: #222;
-    color: black;
+    background: #4a4a4a;
+    border-color: #888;
+    color: #ffffff;
     padding-left: 25px;
 }
 
@@ -215,11 +223,11 @@ body {
     }
 
     .dota-grid {
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     }
 
     .phrases-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .my-popup {
@@ -233,9 +241,9 @@ body {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background: #b1b1b1;
-    border: 2px solid black;
-    color: black;
+    background: #252525;
+    border: 2px solid #555;
+    color: #e0e0e0;
     font-family: sans-serif;
     padding: 10px 24px;
     opacity: 0;

@@ -113,6 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
           heroPhrases.slice(1, 10).forEach((phrase, i) => {
             const phraseCard = document.createElement('button');
             phraseCard.className = 'phrase-item';
+            const group = i < 2 ? 1 : i < 4 ? 2 : i < 6 ? 3 : i === 6 ? 4 : i === 7 ? 5 : 6;
+            phraseCard.classList.add('phrase-group-' + group);
             phraseCard.textContent = phrase;
             phraseCard.dataset.number = i + 1;
             phraseCard.addEventListener('click', () => {
