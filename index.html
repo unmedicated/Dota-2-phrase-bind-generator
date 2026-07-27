@@ -11,14 +11,16 @@
 
 <body>
 
-    <div class="top-box">
-        <button type="button" id="open-btn" class="top-box-btn">Выбрать героя</button>
-        <button type="button" id="bind-btn" class="top-box-btn">Назначить клавишу</button>
-        <button type="button" id="phrases-btn" class="top-box-btn">Выбор Фразы</button>
-    </div>
+    <div class="main-content">
+        <div class="top-box">
+            <button type="button" id="open-btn" class="top-box-btn">Выбрать героя</button>
+            <button type="button" id="bind-btn" class="top-box-btn">Назначить клавишу</button>
+            <button type="button" id="phrases-btn" class="top-box-btn">Выбор Фразы</button>
+        </div>
 
-    <div class="bottom-box">
-        <p id="bottom-text">Здесь находится ваш текст.</p>
+        <div class="bottom-box">
+            <p id="bottom-text">Здесь находится ваш текст.</p>
+        </div>
     </div>
 
     <div id="phrases-popup" class="my-popup">
@@ -62,6 +64,18 @@
 
 
 
+
+    <div class="instruction-box">
+        <h3>Важная информация</h3>
+        <ul>
+            <li>Не биндите на кнопку на которой у вас уже есть какое либо действие, оно <b>заменится</b>.</li>
+            <li>Для использования фразы она должна быть у вас <b>разблокирована</b></li>
+            <li>Звук фразы будет воспроизводиться всем если герой сейчас с вами <b>в игре</b></li>
+            <li>По любым вопросам, ошибкам, предложениям - создавать тикет в дискорде или писать на гитхабе</li>
+            <p> <a href="https://discord.gg/wnGzzzGtqd" style="color: rgb(115, 92, 243);">Discord</a></p>
+            <p><a href="https://dalink.to/dotawo" style="color: rgb(115, 92, 243);">Donate</a></p>
+        </ul>
+    </div>
 
     <div id="toast">Скопировано</div>
     <script src="script.js"></script>
