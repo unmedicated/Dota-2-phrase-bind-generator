@@ -58,6 +58,7 @@ body {
     max-width: 2000px;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translate(-50%, -45%) scale(0.95);
     transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
 }
@@ -65,6 +66,7 @@ body {
 .my-popup.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
 }
 

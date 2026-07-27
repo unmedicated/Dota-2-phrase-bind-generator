@@ -54,8 +54,12 @@ function updateBottomText() {
   }
 }
 
+function hidePopup(el) {
+    el.classList.remove('active');
+}
+
 const openPopup = () => popup.classList.add('active');
-const closePopup = () => popup.classList.remove('active');
+const closePopup = () => hidePopup(popup);
 button.addEventListener('click', openPopup);
 closeButton.addEventListener('click', closePopup);
 
@@ -95,20 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   phrasesButton.addEventListener('click', () => {
     if (!currentHero) {
-      alert('Сначала выберите героя на первую кнопку!');
+      alert('Сначала выберите героя');
       return;
     }
     phrasesGrid.innerHTML = '';
     fetch('phrases.json')
       .then(response => {
-        if (!response.ok) throw new Error('Не удалось загрузить файл phrases.json');
+        if (!response.ok) throw new Error('Не удалось загрузить файл с фразами');
         return response.json();
       })
       .then(data => {
         const heroPhrases = data[currentHero];
         if (heroPhrases && Array.isArray(heroPhrases)) heroId = heroPhrases[0];
         if (!heroPhrases || !Array.isArray(heroPhrases) || heroPhrases.length === 0) {
-          phrasesGrid.innerHTML = '<p style="grid-column: span 3;">У этого героя пока нет прописанных фраз.</p>';
+          phrasesGrid.innerHTML = '<p style="grid-column: span 3;">Нет фраз.</p>';
         } else {
           heroPhrases.slice(1, 10).forEach((phrase, i) => {
             const phraseCard = document.createElement('button');
@@ -122,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
               phraseNum = phraseCard.dataset.number;
               phraseText = phrase;
               updateBottomText();
-              phrasesPopup.classList.remove('active');
+              hidePopup(phrasesPopup);
             });
             phrasesGrid.appendChild(phraseCard);
           });
@@ -135,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  phrasesCloseBtn.addEventListener('click', () => phrasesPopup.classList.remove('active'));
+  phrasesCloseBtn.addEventListener('click', () => hidePopup(phrasesPopup));
 });
 
 if (bindButton) {
@@ -147,7 +151,6 @@ if (bindButton) {
     bindButton.textContent = '[ Нажмите клавишу... ]';
     bindButton.style.borderColor = '#edd134';
   });
-
   document.addEventListener('keydown', (event) => {
     if (!isWaitingForKey) return;
     event.preventDefault();
@@ -159,7 +162,7 @@ if (bindButton) {
     bindButton.style.borderColor = '';
     isWaitingForKey = false;
   });
-
+  
   document.addEventListener('click', () => {
     if (isWaitingForKey) {
       bindButton.textContent = 'Назначить клавишу';
